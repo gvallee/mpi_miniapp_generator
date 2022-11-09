@@ -27,3 +27,7 @@ func AddGenericInit(fd *os.File) {
 	fd.WriteString("\tMPI_Comm_rank(MPI_COMM_WORLD, &rank);\n")
 	fd.WriteString("\tMPI_Comm_size(MPI_COMM_WORLD, &size);\n")
 }
+
+func AddGenericFinalize(fd *os.File) {
+	fd.WriteString("\tMPI_Finalize();\n")
+}
