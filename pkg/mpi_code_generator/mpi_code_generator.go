@@ -17,6 +17,11 @@ func AddIncludes(fd *os.File) {
 	fd.WriteString("#include \"mpi.h\"\n\n")
 }
 
+func AddGenericMain(fd *os.File) {
+	fd.WriteString("int main(int argc, char **argv) {\n")
+	fd.WriteString("\tint rank, size;\n")
+}
+
 func AddGenericInit(fd *os.File) {
 	fd.WriteString("\tMPI_Init(&argc, &argv);\n")
 	fd.WriteString("\tMPI_Comm_rank(MPI_COMM_WORLD, &rank);\n")
